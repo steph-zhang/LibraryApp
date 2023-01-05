@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.library_system.Dao.BookDao">
+    <select id="queryUsersByTitle" resultType="com.example.library_system.domain.UserInfo">
+        SELECT a.* FROM  user_info a,book_info b,borrow c WHERE a.account = c.account and b.bookId = c.book_id and b.title like concat('%',#{title},'%')
+    </select>
+</mapper>

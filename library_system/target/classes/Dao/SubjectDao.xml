@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.library_system.Dao.SubjectDao">
+    <select id="querySubjectTags" resultType="String">
+        SELECT a.tag_name FROM tag a,make_tag b,`subject` c where a.tagId = b.tag_id and c.subjectId = b.subject_id and c.subject_name = #{subject_name}
+    </select>
+</mapper>
